@@ -1,0 +1,19 @@
+%{
+%}
+
+%%
+
+((http)|(ftp))s?:\/\/[a-zA-z0-9!@#$%^&*?.|\/=]+(.com|.in) {printf("\n URL is valid\n");}
+
+.+ {printf("\n URL is invalid\n");}
+
+%%
+int yywrap(void){}
+
+int main()
+{
+printf("\n Enter the URL : ");
+yylex();
+printf("\n");
+return 0;
+}
